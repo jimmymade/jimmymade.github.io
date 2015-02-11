@@ -11,41 +11,8 @@
   <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-  <script type="text/javascript">
-    Parse.initialize("8FAGgqgRZpVOUZwFDX5Kc4gzIG75f18GaNGXTyB0", "RlX46F9yT7Miv56vHrqprSNtHJCbtAOdS5CbKKle");
-    var familyFitnessApp = angular.module('familyFitnessApp', []);
-
-    familyFitnessApp.controller('MeasurementListController', function ($scope) {
-      var MeasurementsObject = Parse.Object.extend("Measurements");
-      var query = new Parse.Query(MeasurementsObject);
-
-      $scope.loadData = function(callback) {
-        query.find({
-          success: function(results) {
-            callback(results);
-          },
-          error: function(error) {
-            alert("Error: " + error.code + " " + error.message);
-          }
-        });
-      }
-
-      $scope.loadData(function(results) {
-        var measurements = new Array();
-
-        for (i = 0; i < results.length; i++) {
-          measurements[i] = {'name': results[i].get("NameLF"),
-                              'initialWeight': results[i].get("Weight"),
-                              'initialBF' : results[i].get("BFPercent")};
-        }
-
-        $scope.$apply(function() {
-          $scope.measurements = measurements;
-        })
-      });
-    });
-  </script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <script type="text/javascript" src="js/core.js"></script>
   
 </head>
 
