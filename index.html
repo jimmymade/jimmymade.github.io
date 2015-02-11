@@ -24,29 +24,29 @@
     <p>Current Body Fat % Competition</p>
 
     <div>
-      <table class="table table-striped table-bordered" >
+      <table class="table table-bordered table-hover" >
         <thead>
-            <tr>
-                <th data-field="id">Name</th>
-                <th data-field="name">Initial Weight</th>
-                <th data-field="price">Initial Body Fat %</th>
-                <th data-field="price">Current Weight</th>
-                <th data-field="price">Current Body Fat %</th>
-            </tr>
-            <tr ng-repeat="measurement in measurements">
-                <td>{{measurement.name}}</td>
-                <td>{{measurement.initialWeight}}</td>
-                <td>{{measurement.initialBF}}</td>
-                <td>--</td>
-                <td>--</td>
-            </tr>
+          <tr>
+            <th data-field="id">Name</th>
+            <th data-field="name">Initial Weight</th>
+            <th data-field="price">Initial Body Fat %</th>
+            <th data-field="price">Current Weight</th>
+            <th data-field="price">Current Body Fat %</th>
+          </tr>
         </thead>
+        <tbody>
+          <tr ng-repeat="measurement in measurements">
+            <td>{{measurement.name}}</td>
+            <td>{{measurement.initialWeight}}</td>
+            <td>{{measurement.initialBF}}</td>
+            <td>--</td>
+            <td>--</td>
+          </tr>
+        </tbody>
       </table>
     </div>
 
   </div>
-
-
 
 </body>
 
